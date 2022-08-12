@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+<link href="{% static "css/mycontent.css" %}" rel="stylesheet">
+    <title>{% block title %}My amazing forum{% endblock %}</title>
+</head>
+<body>
+{% block topnav %}
+            {% if logged_in %}
+                <div class="topnav">
+  <a class="active" href="{% url "mycontent:landing_page" %}">Home</a>
+  <a href="#">dfsivj</a>
+  <a href="#">dsadj</a>
+  <a href="#" class="split">My Profile</a>
+  <a href="{% url "mycontent:newpost" %}" class="split">Create New Post</a>
+
+            {% else%}
+
+    <div class="topnav">
+  <a class="active" href="{% url "mycontent:landing_page" %}">Home</a>
+  <a href="#">News</a>
+  <a href="#">Contact</a>
+  <a href="#" class="split">Sign In</a>
+  <a href="#" class="split">Log In</a>
+            {% endif %}
+    </div>
+{% endblock %}
+    <div class="content">
+{% block content %}
+{% endblock %}
+    </div>
+
+</body>
